@@ -50,7 +50,10 @@ const App = () => {
             key={user.id}
           >
             {user.name}
-            <button className="btn btn-danger" onClick={() => deleteUser(user)}>
+            <button
+              className="btn btn-outline-danger"
+              onClick={() => deleteUser(user)}
+            >
               Delete
             </button>
           </li>
