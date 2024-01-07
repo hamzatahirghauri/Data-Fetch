@@ -39,10 +39,26 @@ const App = () => {
         setUsers(originalUsers);
       });
   };
+  const addUsers = () => {
+    const originalUsers = [...users];
+    const newUser = { id: 0, name: "Hamza Tahir Ghaury" };
+    setUsers([newUser, ...users]);
+
+    axios
+      .post("https://jsonplaceholder.typicode.com/users/", newUser)
+      .then((res) => setUsers([res.data, ...users]))
+      .catch((err) => {
+        setError(err.message);
+        setUsers(originalUsers);
+      });
+  };
   return (
     <>
       {loading && <div className="spinner-border"></div>}
       {error && <h1>{error}</h1>}
+      <button className="btn btn-primary mb-3" onClick={addUsers}>
+        Add
+      </button>
       <ul className="list-group">
         {users.map((user) => (
           <li
