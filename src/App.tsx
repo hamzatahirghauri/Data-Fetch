@@ -68,7 +68,6 @@ const App = () => {
             {user.name}
             <div>
               <button className="btn btn-outline-secondary mx-1">Update</button>
-              <button className="btn btn-outline-secondary mx-1">Update</button>
               <button
                 className="btn btn-outline-danger"
                 onClick={() => deleteUser(user)}
